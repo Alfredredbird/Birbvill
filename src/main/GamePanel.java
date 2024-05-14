@@ -253,32 +253,34 @@ public class GamePanel extends JPanel implements Runnable{
             long drawEnd = System.nanoTime();
             long passed = drawEnd - drawStart;
             g2.setColor(Color.white);
-            g2.drawString("Draw Time: " + passed, 10, 80);
+            g2.drawString("Draw Time: " + passed, 10, 40);
 
-            g2.drawString("X:" + player.worldX, 900, 140);
-            g2.drawString("Y:" + player.worldY, 900, 70);
+            g2.drawString("X:" + player.worldX, 850, 140);
+            g2.drawString("Y:" + player.worldY, 850, 70);
 
-            g2.drawString("X Tile:" + player.worldX/48, 800, 180);
-            g2.drawString("Y Tile:" + player.worldY/48, 800, 220);
+            g2.drawString("X Tile:" + player.worldX/48, 850, 180);
+            g2.drawString("Y Tile:" + player.worldY/48, 850, 220);
 
             g2.setFont(new Font("Arial", Font.PLAIN, 26));
             g2.setColor(Color.white);
             g2.drawString("Invce: " + player.invcCounter, 10, 400);
-            g2.drawString("Item: "+ player.currentWeapon.name, 10,400);
-            g2.drawString("Health:" + player.life, 850, 30);
+            g2.drawString("Item: "+ player.currentWeapon.name, 10,440);
+            g2.drawString("Health:" + player.life, 10, 480);
            if(gameState == 3){
-               g2.drawString("Talking To Npc: True" , 10, 140);
+               g2.drawString("Talking To Npc: True" , 10, 360);
            }
             if(gameState == 1){
-                g2.drawString("Talking To Npc: False", 10, 140);
+                g2.drawString("Talking To Npc: False", 10, 360);
             }
+
 
             //draws the amount of keys the player has
             if(player.hasKey > 0) {
-                g2.drawString("Keys:" + player.hasKey, 900, 280);
+                g2.drawString("Keys:" + player.hasKey, 10, 280);
             }
 
-            g2.drawString("Direction:" + player.direction, 750, 260);
+            g2.drawString("Direction:" + player.direction, 10, 520);
+            g2.drawString("Gamestate:" + gameState, 10, 560);
         }
         g2.dispose();
     }
